@@ -1,0 +1,39 @@
+@import "./variables.scss";
+@import "./helpers.scss";
+
+// Waves
+.waves-effect.waves-additive .waves-ripple {
+  background-color: hex-opacity($additive-bg, 0.7);
+}
+
+.waves-effect.waves-secondary-blue .waves-ripple {
+  background-color: hex-opacity($secondary, 0.7);
+}
+
+.waves-effect.waves-gray .waves-ripple {
+  background-color: hex-opacity($main-gray, 0.7);
+}
+
+
+// Buttons
+.btn:hover, .btn-large:hover, .btn-small:hover  {
+  background-color: initial;
+}
+
+
+// Grid
+.container {
+  max-width: 1480px;
+
+  &.container-fluid {
+    padding: 0 20px;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: #{$laptop-width}) {
+  .container {
+    width: 80%;
+  }
+}

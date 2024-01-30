@@ -1,0 +1,22 @@
+@import "./variables.scss";
+
+@import "./helpers.scss";
+@import "./materialize.scss";
+
+
+body {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  background-color: #{$main-bg};
+  font-family: 'Comfortaa', sans-serif;
+
+}
+
+
+
+@import "./template/subheader.scss";
+@import "./template/header.scss";
+
+
+
+
