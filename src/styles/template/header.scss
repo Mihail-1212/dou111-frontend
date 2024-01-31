@@ -25,7 +25,7 @@
 }
 
 .logo-img {
-  width: 120px;
+  width: 80px;
 }
 
 
@@ -52,7 +52,7 @@
   &__abbr {
     text-transform: uppercase;
     padding-left: 60px;
-    font-size: 16pt;
+    font-size: .6em;
   }
 }
 
@@ -76,6 +76,8 @@
 header.body-header {
   position: sticky;
   top: -1;
+
+  background-color: #{$main-bg};
 
   transition: .2s ease box-shadow;
 

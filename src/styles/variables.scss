@@ -11,9 +11,25 @@ $shadow-gray: #C7C7C7;
 $main-gray: #AEAEAE;
 
 
+// Other
+
+$default-transition: .4s;
+
+
 // Sizing
 $default-radius: 15px;
 
-
 $mobile-width: 601px;
 $laptop-width: 993px;
+
+
+/// footer
+$footer-padding-top: 59px;
+$footer-padding-bottom: 64px;
+
+$footer-border-color: rgba(255,255,255,.2);
+$footer-text-color: rgba(255,255,255,.5);
+
+
+// Brands colors
+$vk-main: #0077ff;
