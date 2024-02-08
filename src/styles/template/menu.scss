@@ -1,0 +1,60 @@
+#main-menu {
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}
+
+.menu-wrapper {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 2;
+  display: block;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: #fff;
+}
+
+
+.menu-header-list-block {
+  min-width: 20em;
+
+  &__inner {
+
+  }
+}
+
+
+.menu-body {
+  display: flex;
+  flex-direction: row;
+
+
+  &__total-list {
+    flex: 1;
+  }
+
+  &__section-list {
+    background: red;
+    flex-basis: 400px;
+  }
+}
+
+
+.menu-list {
+  &__section {
+
+  }
+}
+
+.menu-list-section {
+  &__title {
+
+  }
+
+  &__item-list {
+
+  }
+}

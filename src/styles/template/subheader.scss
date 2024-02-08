@@ -27,9 +27,15 @@
   flex-direction: row;
   align-items: center;
   column-gap: 10px;
+  font-size: 12px;
+  height: 26px;
 
   &__text {
 
+  }
+
+  & i {
+    font-size: 12px;
   }
 }
 
@@ -55,7 +61,8 @@
     flex-direction: row;
     column-gap: 5px;
     align-items: center;
-    font-size: 8pt;
+    font-size: 7pt;
+    height: 26px;
 
     &--visually {
       background-color: #{$shadow-gray};
@@ -67,7 +74,7 @@
     }
 
     & > i {
-      font-size: 18pt !important;
+      font-size: 14pt !important;
     }
   }
 

@@ -5,3 +5,56 @@
 
   @return rgba($red, $green, $blue, $opacity);
 }
+
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+
+@function transform-number-to-string($value) {
+  @if type-of($value)=='number' {
+    @return #{$value};
+  }
+  @else if type-of($value)=='string' {
+    @return $value;
+  }
+  @else {
+    @error 'Input #{$value} is no number or string';
+  }
+}
+
+
+
+@mixin attr-x($attr, $alias: '', $attr-count: 10, $attr-steps: 10, $unit: '%') {
+  $attr-list: null;
+  @if ($alias == '') {
+    $alias: $attr;
+  }
+
+  @for $i from 1 through $attr-count {
+    $attr-value: $attr-steps * $i;
+    $attr-value-visible: str-replace(transform-number-to-string($attr-value), '.', '-');
+    .#{$alias}-#{$attr-value-visible} {
+      #{$attr}: #{$attr-value}#{$unit};
+    }
+    $attr-list: append($attr-list, unquote(".#{$attr}-#{$attr-value}"), comma);
+  }
+}
+
+
+// helpers - sizing
+@include attr-x('width', 'w');
+@include attr-x('border-radius', '', 20, 5);
+@include attr-x('border-radius', 'border-radius-px', 5, 5, 'px');
+
+
+@include attr-x('margin-top', 'mt', 20, 0.5, 'rem');
+@include attr-x('margin-bottom', 'mb', 20, 0.5, 'rem');
+@include attr-x('margin-right', 'mr', 20, 0.5, 'rem');
+@include attr-x('margin-left', 'ml', 20, 0.5, 'rem');
+@include attr-x('margin', 'm', 20, 0.5, 'rem');

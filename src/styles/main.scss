@@ -17,6 +17,44 @@ body {
 @import "./template/subheader.scss";
 @import "./template/header.scss";
 @import "./template/footer.scss";
+@import "./template/menu.scss";
+
+/**
+Scroll styles
+ */
+
+.scroll-to-top-wrapper {
+  position: sticky;
+  bottom: 55px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  margin: 35px 75px;
+}
+
+.scroll-to-top {
+  height: 45px;
+  width: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  background-color: #{$additive-bg-dark};
+
+  transition: opacity 0.2s linear;
+
+  &:hover {
+    background-color: #{$additive-bg-dark-hover};
+  }
+
+  &.animate-hide {
+    opacity: 0;
+  }
+}
 
 
 

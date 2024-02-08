@@ -20,6 +20,14 @@
   background-color: initial;
 }
 
+.btn-border {
+  border: 1px solid #000;
+
+  &--secondary-blue {
+    border-color: $secondary
+  }
+}
+
 
 // Grid
 .container {
