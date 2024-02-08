@@ -58,7 +58,8 @@
     <header class="body-header">
         <div class="body-header__inner body-header-inner container">
             <div class="body-header-inner__logo-block header-logo-block">
-                <button class="header-logo-block__menu-btn waves-effect waves-secondary-blue btn btn-flat btn-large">
+                <button data-menu-action="open-menu"
+                        class="header-logo-block__menu-btn waves-effect waves-secondary-blue btn btn-flat btn-large">
                     <i class="fa-solid fa-bars-staggered "></i>
                 </button>
 
@@ -89,12 +90,21 @@
     </header>
 
 
-    <main style="height: 1000px">
+    <div class="main-wrapper">
+        <main style="height: 2000px">
 
-    </main>
 
+        </main>
+        <div class="scroll-to-top-wrapper">
+            <div class="scroll-to-top btn border-radius-px-15" id="scroll-button">
+                <div class="scroll-to-top__inner">
+                    <i class="fa-solid fa-up-long"></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <footer>
+    <footer id="footer">
         <div class="footer">
             <div class="footer-inner">
                 <div class="footer-top">
@@ -109,7 +119,10 @@
                                     </div>
                                     <div class="bottom-menu-item__body">
                                         <div class="bottom-menu-text">
-                                            В настоящее время детский сад состоит из 5-ти корпусов, функционируют 35 групп. 9 групп ясельного возраста и 26 - дошкольного. Надеемся, что сайт во многом будет полезен как родителям воспитанников нашего детского сада, так и всем-всем-всем!
+                                            В настоящее время детский сад состоит из 5-ти корпусов, функционируют 35
+                                            групп. 9 групп ясельного возраста и 26 - дошкольного. Надеемся, что сайт
+                                            во многом будет полезен как родителям воспитанников нашего детского
+                                            сада, так и всем-всем-всем!
                                         </div>
                                     </div>
                                 </div>
@@ -185,7 +198,7 @@
                                                 <a href="https://vk.com/madou111" target="_blank"
                                                    class="fa-brands fa-vk social-icons__link vk"
                                                    rel="nofollow" title="VK">
-                                                 </a>
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -206,6 +219,186 @@
             </div>
         </div>
     </footer>
+</div>
+
+<!-- region menu -->
+<div class="menu-wrapper" id="main-menu">
+    <div class="menu">
+        <div class="menu-header menu__header">
+            <div class="body-header-inner container">
+                <div class="body-header-inner__logo-block header-logo-block">
+                    <button data-menu-action="close-menu"
+                            class="header-logo-block__menu-btn waves-effect waves-secondary-blue btn btn-flat btn-large">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                    <div class="header-logo-block__logo-section logo-section">
+                        <div class="logo-section__logo">
+                            <img class="logo-img" src="./dist/img/logo.png" alt="logo">
+                        </div>
+                        <div class="logo-section__title logo-title">
+                            <div class="logo-title__abbr">мадоу</div>
+                            <div class="logo-title__title">"Детский сад №111" г. Перми</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="body-header-inner__list-block menu-header-list-block">
+                    <div class="menu-header-list-block__inner menu-header-list-block-inner">
+                        <div class="menu-header-list-block-inner__list menu-header-list">
+                            <div class="menu-header-list__item">
+                                <a href="#">madou111@gmail.com</a>
+                            </div>
+                            <div class="menu-header-list__item">
+                                <a href="#">dou111@vk.com</a>
+                            </div>
+                        </div>
+                        <div class="menu-header-list-block-inner__button">
+                            <div class="menu-header-button-question">
+                                <a href="#" class="btn btn-flat waves-effect waves-additive btn-border w-100 border-radius-px-5">
+                                    Задать вопрос
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-body menu__body container w-100 mt-5">
+            <div class="menu-body__total-list menu-list">
+                <div class="menu-list__section menu-list-section">
+                    <div class="menu-list-section__title">
+                        <a href="#" class="link section-link">Раздел 1</a>
+                    </div>
+                    <div class="menu-list-section__item-list menu-section-item-list">
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                        <div class="menu-section-item-list__item">
+                            <a href="#" class="menu-element">Страница 1</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-body__section-list">
+test
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="./dist/scripts/main.min.js"></script>
