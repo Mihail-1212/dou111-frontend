@@ -4,8 +4,6 @@
     <!-- Css framework -->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +20,7 @@
 <body>
 
 <div class="body-inner">
-    <div class="sub-header">
+    <div class="sub-header" id="sub-header">
         <div class="sub-header__inner container container-fluid">
             <ul class="sub-header__list sub-header-items">
                 <li class="sub-header-items__item sub-header-item">
@@ -262,8 +260,17 @@
                     </div>
                 </div>
             </div>
+            <div class="menu-header__search-block container mt-2">
+                <div class="row">
+                    <div class="input-field col s10 offset-s1 ">
+                        <i class="fa-solid fa-magnifying-glass fa-2x prefix material-icons" aria-hidden="true"></i>
+                        <input type="text" id="menu-search-input" class="autocomplete menu-search">
+                        <label for="menu-search-input">Поиск</label>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="menu-body menu__body container w-100 mt-5">
+        <div class="menu-body menu__body container w-100 mt-2">
             <div class="menu-body__total-list menu-list">
                 <div class="menu-list__section menu-list-section">
                     <div class="menu-list-section__title">
@@ -395,12 +402,14 @@
             </div>
 
             <div class="menu-body__section-list">
-test
+                Бренды (госуслуги итд)
             </div>
         </div>
     </div>
 </div>
 
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="./dist/scripts/main.min.js"></script>
 </body>
 </html>

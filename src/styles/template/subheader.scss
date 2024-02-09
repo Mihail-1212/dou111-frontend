@@ -1,5 +1,6 @@
 .sub-header {
   border-bottom: 1px solid #{$shadow-gray};
+  overflow: hidden;
 
   &__inner {
     display: flex;

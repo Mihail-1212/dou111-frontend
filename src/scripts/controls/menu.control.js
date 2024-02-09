@@ -39,6 +39,7 @@ export class MenuControl extends BaseControl {
     _beforeInit() {
         super._beforeInit();
         this._mainMenu = document.getElementById("main-menu");
+        this._subHeader = document.getElementById("sub-header");
     }
 
 
@@ -86,8 +87,6 @@ export class MenuControl extends BaseControl {
         }).ready.then(() => {
             this._mainMenu.classList.add("show");
         });
-
-
     }
 
     closeMenuAction() {
@@ -96,8 +95,8 @@ export class MenuControl extends BaseControl {
             {opacity: 0,}
         ], {
             duration: this.ANIMATION_SHOW_DURATION_MS,
-        }).finished.then((ev) => {
-            this._mainMenu.classList.remove("show")
+        }).finished.then(() => {
+            this._mainMenu.classList.remove("show");
         })
     }
 
