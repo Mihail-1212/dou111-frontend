@@ -2,12 +2,12 @@ const paths = {
     styles: {
         input: 'src/styles/main.scss',
         src: 'src/styles/**/*.scss',
-        dest: 'dist/styles/'
+        dest: 'dist/css/'
     },
     scripts: {
         input: 'src/scripts/app.js',
         src: 'src/scripts/**/*.js',
-        dest: 'dist/scripts/'
+        dest: 'dist/js/'
     }
 };
 
@@ -42,9 +42,9 @@ var nodeResolve = require('@rollup/plugin-node-resolve');
 var cache;
 
 gulp.task('js', async function () {
-    const hash = await hashFiles.sync({
-        files: ['./src/**'],
-    });
+    // const hash = await hashFiles.sync({
+    //     files: ['./src/**'],
+    // });
     rimraf.rimrafSync(['./' + paths.scripts.dest]);
     return rollup({
         // Point to the entry file
@@ -67,7 +67,7 @@ gulp.task('js', async function () {
             cache = bundle;
         })
         // Name of the output file.
-        .pipe(source('main.' + hash + '.js'))
+        .pipe(source('main.min.js'))
         .pipe(buffer())
 
         // The use of sourcemaps here might not be necessary,
@@ -85,17 +85,14 @@ gulp.task('js:watch', function (done) {
 })
 
 gulp.task('css', async function () {
-    const hash = await hashFiles.sync({
-        files: ['./src/**'],
-    });
     rimraf.rimrafSync(['./' + paths.styles.dest]);
     return gulp.src(paths.styles.input)
         .pipe(sass())
-        .pipe(cleanCSS())
+        // .pipe(cleanCSS())
         // pass in options to the stream
         .pipe(rename({
             basename: 'main',
-            suffix: '.' + hash
+            suffix: '.min'
         }))
         .pipe(gulp.dest(paths.styles.dest));
 

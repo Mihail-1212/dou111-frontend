@@ -26,6 +26,7 @@
 
 .logo-img {
   width: 80px;
+  height: fit-content;
 }
 
 
@@ -75,7 +76,7 @@
 // Header menu
 header.body-header {
   position: sticky;
-  top: -1;
+  top: -1px;
 
   background-color: #{$main-bg};
 
