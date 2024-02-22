@@ -1,4 +1,3 @@
-
 const paths = {
     styles: {
         input: 'src/styles/main.scss',
@@ -25,6 +24,9 @@ var rollup = require('@rollup/stream');
 var sass = require('gulp-sass')(require('sass'));
 var rename = require('gulp-rename');
 var cleanCSS = require('gulp-clean-css');
+var hashFiles = require('hash-files');
+var rimraf = require('rimraf');
+
 
 // *Optional* Depends on what JS features you want vs what browsers you need to support
 // *Not needed* for basic ES6 module import syntax support
@@ -39,7 +41,11 @@ var nodeResolve = require('@rollup/plugin-node-resolve');
 // Cache needs to be initialized outside of the Gulp task
 var cache;
 
-gulp.task('js', function () {
+gulp.task('js', async function () {
+    const hash = await hashFiles.sync({
+        files: ['./src/**'],
+    });
+    rimraf.rimrafSync(['./' + paths.scripts.dest]);
     return rollup({
         // Point to the entry file
         input: paths.scripts.input, //'./app.js',
@@ -61,7 +67,7 @@ gulp.task('js', function () {
             cache = bundle;
         })
         // Name of the output file.
-        .pipe(source('main.min.js'))
+        .pipe(source('main.' + hash + '.js'))
         .pipe(buffer())
 
         // The use of sourcemaps here might not be necessary,
@@ -78,20 +84,24 @@ gulp.task('js:watch', function (done) {
     done();
 })
 
-gulp.task('css', function() {
+gulp.task('css', async function () {
+    const hash = await hashFiles.sync({
+        files: ['./src/**'],
+    });
+    rimraf.rimrafSync(['./' + paths.styles.dest]);
     return gulp.src(paths.styles.input)
         .pipe(sass())
         .pipe(cleanCSS())
         // pass in options to the stream
         .pipe(rename({
             basename: 'main',
-            suffix: '.min'
+            suffix: '.' + hash
         }))
         .pipe(gulp.dest(paths.styles.dest));
 
 });
 
-gulp.task('css:watch', function(done) {
+gulp.task('css:watch', function (done) {
     gulp.watch([paths.styles.src], gulp.series('css'));
     done();
 });
