@@ -1,16 +1,15 @@
 function handlePosStickyMove() {
-    const el = document.querySelector(".body-header")
-    const observer = new IntersectionObserver(
-        ([e]) => {
-            e.target.classList.toggle("shadow-bottom", !e.isIntersecting)
-        },
-        { threshold: [1] }
-    );
-    observer.observe(el);
+    const headerEl = document.querySelector(".body-header"),
+        subheaderEl = document.querySelector("#sub-header");
+
+    const observer = new IntersectionObserver(([e]) => {
+        headerEl.classList.toggle("shadow-bottom", !e.isIntersecting);
+    });
+
+    observer.observe(subheaderEl);
 }
 
 
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     handlePosStickyMove();
 });
